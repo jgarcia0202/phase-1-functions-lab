@@ -1,5 +1,70 @@
 // Code your solution in this file!
-const hqBlocks = 42;
+function distanceFromHqInBlocks(num1){
+    const totalBlocks = num1 - 42
+    if (totalBlocks<0){
+        return totalBlocks*(-1)
+    }
+    else{
+        return totalBlocks
+    }
+}
+function distanceFromHqInFeet(num1) {
+    return distanceFromHqInBlocks(num1)*264
+}
+function distanceTravelledInFeet(num2,num3){
+   const total = (num2-num3) * 264
+    if (total < 0) {
+        return total * (-1)
+    }
+    else{
+        return total
+    }
+}
+function calculatesFarePrice(start, end){
+    const fare = distanceTravelledInFeet(start,end) 
+    if (fare < 400){
+        return 0
+    }
+    else if(fare < 2000){
+        return (fare - 400) * (0.02)
+    }
+    else if (fare > 2500){
+        return 'cannot travel that far'
+    }
+    else {
+        return 25
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const hqBlocks = 42;
 let block;
 let blockFt;
 function distanceFromHqInBlocks(awayBlock) {
@@ -82,14 +147,4 @@ function calculatesFarePrice(start, destination) {
     }
     return cost;
 }
-
-distanceFromHqInBlocks(43);
-distanceFromHqInBlocks(50);
-distanceFromHqInBlocks(34);
-distanceFromHqInFeet(43);
-distanceFromHqInFeet(50);
-distanceFromHqInFeet(34);
-distanceTravelledInFeet(43, 48);
-distanceTravelledInFeet(50, 60);
-distanceTravelledInFeet(34, 28);
-calculatesFarePrice(43,44);
+*/
